@@ -5,6 +5,6 @@ The code is based on: [FreeCodeCamp Course](https://www.youtube.com/watch?v=tWVW
 * has-path
     * breadth-first
     * depth-first
-* undirect-path -> **IN PROGRESS**
+* undirected-path
     * breadth-first
     * depth-first
