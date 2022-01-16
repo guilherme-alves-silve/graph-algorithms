@@ -36,7 +36,7 @@ public class ConnectedComponentsCountDepthFirstSearch {
         System.out.println("connectedComponentsCount: " + connectedComponentsCount(Map.of())); // -> 0
     }
 
-    private static int connectedComponentsCount(Map<Integer, List<Integer>> graph) {
+    public static int connectedComponentsCount(Map<Integer, List<Integer>> graph) {
 
         int count = 0;
         var visited = new HashSet<Integer>();
