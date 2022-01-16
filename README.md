@@ -11,3 +11,6 @@ The code is based on: [FreeCodeCamp Course](https://www.youtube.com/watch?v=tWVW
 * connected-components-count
   * breadth-first 
   * depth-first
+* largest-component
+  * breadth-first
+  * depth-first
