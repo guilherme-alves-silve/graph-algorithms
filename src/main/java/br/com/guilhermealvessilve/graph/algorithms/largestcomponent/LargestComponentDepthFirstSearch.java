@@ -65,8 +65,8 @@ public class LargestComponentDepthFirstSearch {
         visited.add(node);
 
         int counted = 1;
-        for (var current : graph.get(node)) {
-            counted += countComponents(graph, current, visited);
+        for (var neighbor : graph.get(node)) {
+            counted += countComponents(graph, neighbor, visited);
         }
 
         return counted;

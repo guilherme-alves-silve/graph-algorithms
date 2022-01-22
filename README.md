@@ -14,3 +14,7 @@ The code is based on: [FreeCodeCamp Course](https://www.youtube.com/watch?v=tWVW
 * largest-component
   * breadth-first
   * depth-first
+* shortest-path
+  * breadth-first
+* island-count [**IN PROGRESS**]
+  * breadth-first
