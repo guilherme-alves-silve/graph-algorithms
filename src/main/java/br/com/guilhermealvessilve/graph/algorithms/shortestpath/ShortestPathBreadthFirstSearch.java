@@ -59,8 +59,7 @@ public class ShortestPathBreadthFirstSearch {
 
             for (var neighbor : graph.get(current.node)) {
                 if (!visited.contains(neighbor)) {
-                    var neighborPath = new Path(neighbor, current.distance + 1);
-                    queue.addLast(neighborPath);
+                    queue.addLast(new Path(neighbor, current.distance + 1));
                     visited.add(neighbor);
                 }
             }
@@ -86,8 +85,8 @@ public class ShortestPathBreadthFirstSearch {
 
     private static class Path {
 
-        public String node;
-        public int distance;
+        String node;
+        int distance;
 
         public Path(String node) {
             this(node, 0);
