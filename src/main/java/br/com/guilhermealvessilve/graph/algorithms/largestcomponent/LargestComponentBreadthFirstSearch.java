@@ -1,7 +1,7 @@
 package br.com.guilhermealvessilve.graph.algorithms.largestcomponent;
 
+import java.util.ArrayDeque;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -49,19 +49,19 @@ public class LargestComponentBreadthFirstSearch {
     public static int largestComponent(Map<Integer, List<Integer>> graph) {
 
         var visited = new HashSet<Integer>();
-        var queue = new LinkedList<Integer>();
+        var queue = new ArrayDeque<Integer>();
 
         int largest = 0;
         for (var node : graph.keySet()) {
-            queue.push(node);
+            queue.addLast(node);
 
             int counted = 0;
             while (!queue.isEmpty()) {
-                var current = queue.pop();
+                var current = queue.pollFirst();
 
                 for (var neighbor : graph.get(current)) {
                     if (!visited.contains(neighbor)) {
-                        queue.push(neighbor);
+                        queue.addLast(neighbor);
                         visited.add(neighbor);
                         ++counted;
                     }

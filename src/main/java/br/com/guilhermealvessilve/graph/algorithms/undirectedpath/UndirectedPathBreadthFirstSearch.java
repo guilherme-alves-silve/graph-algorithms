@@ -45,18 +45,18 @@ public class UndirectedPathBreadthFirstSearch {
 
     private static boolean hasPath(Map<String, List<String>> graph, String src, String dest, Set<String> visited) {
 
-        var queue = new LinkedList<String>();
-        queue.push(src);
+        var queue = new ArrayDeque<String>();
+        queue.addLast(src);
 
         while (!queue.isEmpty()) {
-            var current = queue.pop();
+            var current = queue.pollFirst();
             visited.add(current);
 
             if (current.equals(dest)) return true;
 
             for (var neighbor : graph.get(current)) {
                 if (!visited.contains(neighbor)) {
-                    queue.push(neighbor);
+                    queue.addLast(neighbor);
                 }
             }
         }

@@ -1,4 +1,4 @@
-package br.com.guilhermealvessilve.graph.algorithms.connectedcomponentscount;
+package br.com.guilhermealvessilve.graph.algorithms;
 
 import java.util.ArrayDeque;
 import java.util.HashSet;
@@ -8,7 +8,6 @@ import java.util.Map;
 public class ConnectedComponentsCountBreadthFirstSearch {
 
     public static void main(String[] args) {
-
         Map<Integer, List<Integer>> graph1 = Map.of(
                 3, List.of(),
                 4, List.of(6),
@@ -44,19 +43,8 @@ public class ConnectedComponentsCountBreadthFirstSearch {
 
         for (var node : graph.keySet()) {
 
-            queue.addLast(node);
-            if (!visited.contains(node)) ++count;
-
             while (!queue.isEmpty()) {
 
-                var current = queue.pollFirst();
-                visited.add(current);
-
-                for (var neighbor : graph.get(current)) {
-                    if (!visited.contains(neighbor)) {
-                        queue.addLast(neighbor);
-                    }
-                }
             }
         }
 
