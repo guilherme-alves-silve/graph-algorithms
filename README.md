@@ -16,5 +16,7 @@ The code is based on: [FreeCodeCamp Course](https://www.youtube.com/watch?v=tWVW
   * depth-first
 * shortest-path
   * breadth-first
-* island-count [**IN PROGRESS**]
-  * breadth-first
+* island-count
+  * depth-first
+* minimum-island
+  * depth-first
