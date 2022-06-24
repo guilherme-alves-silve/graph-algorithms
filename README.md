@@ -1,6 +1,11 @@
 # Graph Algorithms [Java 17+]
 
-The code is based on: [FreeCodeCamp Course](https://www.youtube.com/watch?v=tWVWeAqZ0WU&ab_channel=freeCodeCamp.org) and [structy.net](https://structy.net/).
+## Code based on: 
+  * [FreeCodeCamp Course](https://www.youtube.com/watch?v=tWVWeAqZ0WU&ab_channel=freeCodeCamp.org)
+  * [structy.net](https://structy.net/).
+  * [Advanced Algorithms (Graph Algorithms) in Java](https://www.udemy.com/course/advanced-algorithms-in-java)
+
+## Algorithms 
 
 * has-path
   * breadth-first
@@ -19,4 +24,8 @@ The code is based on: [FreeCodeCamp Course](https://www.youtube.com/watch?v=tWVW
 * island-count
   * depth-first
 * minimum-island
+  * depth-first
+* cycle-detection
+  * depth-first
+* dijkstra
   * depth-first
