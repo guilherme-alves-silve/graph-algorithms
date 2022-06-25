@@ -27,5 +27,4 @@
   * depth-first
 * cycle-detection
   * depth-first
-* dijkstra
-  * depth-first
+* dijkstra-search

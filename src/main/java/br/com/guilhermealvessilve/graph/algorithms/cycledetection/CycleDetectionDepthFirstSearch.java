@@ -70,10 +70,11 @@ public class CycleDetectionDepthFirstSearch {
     }
 
     public static boolean hasCycle(Map<String, List<String>> graph) {
+
         var visited = new HashSet<String>();
         var beingVisited = new HashSet<String>();
         for (var node : graph.keySet()) {
-            if (hasCycle(graph, node, visited, beingVisited)) {
+            if (hasCycle(graph, node, beingVisited, visited)) {
                 return true;
             }
         }
@@ -81,21 +82,22 @@ public class CycleDetectionDepthFirstSearch {
         return false;
     }
 
-    private static boolean hasCycle(Map<String, List<String>> graph,
-                                    String node,
-                                    Set<String> visited,
-                                    Set<String> beingVisited) {
+    public static boolean hasCycle(Map<String, List<String>> graph,
+                                   String node,
+                                   Set<String> beingVisited,
+                                   Set<String> visited) {
+        if (beingVisited.contains(node)) return true;
         if (visited.contains(node)) return false;
         beingVisited.add(node);
 
         for (var neighbor : graph.get(node)) {
-            if (beingVisited.contains(neighbor)) return true;
-            if (hasCycle(graph, neighbor, visited, beingVisited)) return true;
+            if (hasCycle(graph, neighbor, beingVisited, visited)) {
+                return true;
+            }
         }
 
         beingVisited.remove(node);
         visited.add(node);
-
         return false;
     }
 }
