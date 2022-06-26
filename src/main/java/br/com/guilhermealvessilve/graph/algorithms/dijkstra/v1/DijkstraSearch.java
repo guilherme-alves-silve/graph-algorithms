@@ -69,10 +69,10 @@ public class DijkstraSearch {
             }
         }
         
-        return getPath(dest);
+        return buildDestinationPath(dest);
     }
 
-    private static List<Vertex> getPath(final Vertex dest) {
+    private static List<Vertex> buildDestinationPath(final Vertex dest) {
         var path = new ArrayList<Vertex>();
         for (var node = dest; node != null; node = node.getParent()) {
             path.add(node);

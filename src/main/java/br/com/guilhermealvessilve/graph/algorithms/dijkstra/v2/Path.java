@@ -2,7 +2,7 @@ package br.com.guilhermealvessilve.graph.algorithms.dijkstra.v2;
 
 import java.util.Objects;
 
-public class Path implements Comparable<Path> {
+public class Path {
     private int distance;
     private final String node;
     private Path parent;
@@ -16,9 +16,8 @@ public class Path implements Comparable<Path> {
         return distance;
     }
 
-    Path setDistance(int distance) {
+    void setDistance(int distance) {
         this.distance = distance;
-        return this;
     }
 
     public String getNode() {
@@ -49,10 +48,5 @@ public class Path implements Comparable<Path> {
     @Override
     public int hashCode() {
         return Objects.hash(node);
-    }
-
-    @Override
-    public int compareTo(Path other) {
-        return Integer.compare(distance, other.distance);
     }
 }

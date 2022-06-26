@@ -26,7 +26,7 @@ public class DijkstraSearch {
 
     public static List<Path> getShortestPath(Map<String, List<Edge>> graph, String src, String dest) {
         
-        var queue = new PriorityQueue<Path>();
+        var queue = new PriorityQueue<>(Comparator.comparingInt(Path::getDistance));
         var visited = new HashSet<Path>();
 
         var nodeAndPath = buildNodeAndPath(graph);
@@ -51,7 +51,7 @@ public class DijkstraSearch {
             }
         }
         
-        return getPath(dest, nodeAndPath);
+        return buildDestinationPath(dest, nodeAndPath);
     }
 
     private static Map<String, Path> buildNodeAndPath(Map<String, List<Edge>> graph) {
@@ -61,7 +61,7 @@ public class DijkstraSearch {
                 .collect(toMap(Path::getNode, Function.identity()));
     }
 
-    private static List<Path> getPath(final String dest, final Map<String, Path> graphPath) {
+    private static List<Path> buildDestinationPath(final String dest, final Map<String, Path> graphPath) {
         var path = new ArrayList<Path>();
         var destPath = graphPath.get(dest);
         for (var node = destPath; node != null; node = node.getParent()) {
