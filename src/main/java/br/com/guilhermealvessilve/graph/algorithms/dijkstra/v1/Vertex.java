@@ -1,4 +1,4 @@
-package br.com.guilhermealvessilve.graph.algorithms.dijkstra;
+package br.com.guilhermealvessilve.graph.algorithms.dijkstra.v1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,8 +65,8 @@ public class Vertex implements Comparable<Vertex> {
         return name;
     }
 
-    public Vertex addNeighbor(int weight, Vertex edge) {
-        this.adjacencyList.add(new Edge(weight, this, edge));
+    public Vertex addNeighbor(int weight, Vertex target) {
+        this.adjacencyList.add(new Edge(weight, target));
         return this;
     }
 }

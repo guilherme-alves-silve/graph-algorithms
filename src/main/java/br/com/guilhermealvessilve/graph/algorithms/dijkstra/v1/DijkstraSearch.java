@@ -1,4 +1,4 @@
-package br.com.guilhermealvessilve.graph.algorithms.dijkstra;
+package br.com.guilhermealvessilve.graph.algorithms.dijkstra.v1;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,8 +41,8 @@ public class DijkstraSearch {
         vertexH.addNeighbor(7, vertexC)
             .addNeighbor(6, vertexF);
 
-        System.out.println("shortestPath(A, D): " + getShortestPath(vertexA, vertexD));
-        System.out.println("shortestPath(A, G): " + getShortestPath(vertexA, vertexG));
+        System.out.println("shortestPath(A, D): " + getShortestPath(vertexA, vertexD)); // -> [A, E, F, C, D]
+        System.out.println("shortestPath(A, G): " + getShortestPath(vertexA, vertexG)); // -> [A, E, F, C, G]
     }
 
     public static List<Vertex> getShortestPath(Vertex src, Vertex dest) {
@@ -56,9 +56,8 @@ public class DijkstraSearch {
             var current = queue.poll();
             for (var edge : current.getAdjacencyList()) {
 
-                var start = edge.start();
                 var neighbor = edge.target();
-                var distance = start.getDistance() + edge.weight();
+                var distance = current.getDistance() + edge.weight();
 
                 if (!visited.contains(neighbor) || distance < neighbor.getDistance()) {
                     queue.remove(neighbor);
