@@ -9,7 +9,7 @@ public class DijkstraSearch {
 
     public static void main(String[] args) {
 
-        Map<String, List<Edge>> graph = Map.of(
+        Map<String, List<Edge>> graph1 = Map.of(
             "A", List.of(edge(5, "B"), edge(9, "E"), edge(8, "H")),
             "B", List.of(edge(12, "C"), edge(15, "D"), edge(4, "H")),
             "C", List.of(edge(3, "D"), edge(11, "G")),
@@ -20,8 +20,22 @@ public class DijkstraSearch {
             "H", List.of(edge(7, "C"), edge(6, "F"))
         );
 
-        System.out.println("shortestPath(A, D): " + getShortestPath(graph, "A", "D")); // -> [A, E, F, C, D]
-        System.out.println("shortestPath(A, G): " + getShortestPath(graph, "A", "G")); // -> [A, E, F, C, G]
+        Map<String, List<Edge>> graph2 = Map.of(
+                "A", List.of(edge(5, "B"), edge(8, "C")),
+                "B", List.of(edge(12, "A"), edge(2, "C")),
+                "C", List.of(edge(20, "A"), edge(7, "B"))
+        );
+
+        Map<String, List<Edge>> graph3 = Map.of(
+                "A", List.of(edge(1, "B"), edge(1, "C")),
+                "B", List.of(edge(1, "A"), edge(1, "C")),
+                "C", List.of(edge(1, "A"), edge(1, "B"))
+        );
+
+        System.out.println("shortestPath(A, D): " + getShortestPath(graph1, "A", "D")); // -> [A, E, F, C, D]
+        System.out.println("shortestPath(A, G): " + getShortestPath(graph1, "A", "G")); // -> [A, E, F, C, G]
+        System.out.println("shortestPath(A, C): " + getShortestPath(graph2, "A", "C")); // -> [A, B, C]
+        System.out.println("shortestPath(A, C): " + getShortestPath(graph3, "A", "C")); // -> [A, C]
     }
 
     public static List<Path> getShortestPath(Map<String, List<Edge>> graph, String src, String dest) {
@@ -36,6 +50,7 @@ public class DijkstraSearch {
         
         while(!queue.isEmpty()) {
             var current = queue.poll();
+            visited.add(current);
             for (var edge : graph.get(current.getNode())) {
 
                 var neighbor = nodeAndPath.get(edge.target());

@@ -42,7 +42,7 @@ public class DijkstraSearch {
             .addNeighbor(6, vertexF);
 
         System.out.println("shortestPath(A, D): " + getShortestPath(vertexA, vertexD)); // -> [A, E, F, C, D]
-        System.out.println("shortestPath(A, G): " + getShortestPath(vertexA, vertexG)); // -> [A, E, F, C, G]
+        System.out.println("shortestPath(A, G): " + getShortestPath(vertexA, vertexG)); // -> [A, E, F, C, D, G]
     }
 
     public static List<Vertex> getShortestPath(Vertex src, Vertex dest) {
@@ -54,6 +54,7 @@ public class DijkstraSearch {
         
         while(!queue.isEmpty()) {
             var current = queue.poll();
+            visited.add(current);
             for (var edge : current.getAdjacencyList()) {
 
                 var neighbor = edge.target();
