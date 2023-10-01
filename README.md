@@ -2,8 +2,9 @@
 
 ## Code based on: 
   * [FreeCodeCamp Course](https://www.youtube.com/watch?v=tWVWeAqZ0WU&ab_channel=freeCodeCamp.org)
-  * [structy.net](https://structy.net/).
+  * [structy.net](https://structy.net/)
   * [Advanced Algorithms (Graph Algorithms) in Java](https://www.udemy.com/course/advanced-algorithms-in-java)
+  * [Inteligência Artificial: Algoritmos Inteligentes de Busca](https://www.udemy.com/course/inteligencia-artificial-algoritmos-inteligentes-de-busca/)
 
 ## Algorithms 
 
@@ -28,3 +29,5 @@
 * cycle-detection
   * depth-first
 * dijkstra-search
+* greedy-search
+* a*-search
